@@ -1,10 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Free Bootstrap Themes by Zerotheme dot com - Free Responsive Html5 Templates">
+    <meta name="author" content="https://www.Zerotheme.com">
+
+    <title>나만의 여행 기록, 쉐어트레블</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Custom CSS -->
+	<link href="static/css/style.css" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link href="static/css/animate.css" rel="stylesheet" media="all" type="text/css">
+
+	<!-- Custom Fonts -->
+    <link href="static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Owl Carousel Assets -->
+    <link href="static/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <!-- <link href="owl-carousel/owl.theme.css" rel="stylesheet"> -->
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]-->
+        <script src="static/js/html5shiv.js"></script>
+        <script src="static/js/respond.min.js"></script>
 </head>
 <body>
+<div class="main-header">
+			<!--Navigation-->
+    <nav id="menu" class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+                    <a class="navbar-brand" href="#">
+                        <img src="static/images/st_1line_logo.jpg" width="250px"/>
+                    </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">index</a></li>
+                    <li><a href="single.html">single</a></li>
+                    <li><a href="archive.html">blog</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                    <li class="active"><a href="account.html">account</a></li>
+                    <li><a href="korea.html">korea</a></li>
+                    <li><a href="world.html">world</a></li>
+                    <li><a href="settings.html">settings</a></li>
 
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<style>
+#chartdiv {
+  width: 100%;
+  height: 500px;
+}
+
+</style>
+
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+<!-- Chart code -->
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create map instance
+var chart = am4core.create("chartdiv", am4maps.MapChart);
+
+// Set map definition
+chart.geodata = am4geodata_worldLow;
+
+// Set projection
+chart.projection = new am4maps.projections.NaturalEarth1();
+
+// Create map polygon series
+var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+polygonSeries.mapPolygons.template.strokeWidth = 0.5;
+
+// Exclude Antartica
+polygonSeries.exclude = ["AQ"];
+
+// Make map load polygon (like country names) data from GeoJSON
+polygonSeries.useGeodata = true;
+
+// Configure series
+var polygonTemplate = polygonSeries.mapPolygons.template;
+polygonTemplate.tooltipText = "{name}";
+polygonTemplate.fill = chart.colors.getIndex(0);
+
+// Create hover state and set alternative fill color
+var hs = polygonTemplate.states.create("hover");
+hs.properties.fill = chart.colors.getIndex(2);
+
+// Create active state
+var activeState = polygonTemplate.states.create("active");
+activeState.properties.fill = chart.colors.getIndex(4);
+
+// Create an event to toggle "active" state
+polygonTemplate.events.on("hit", function(ev) {
+  ev.target.isActive = !ev.target.isActive;
+})
+
+
+var graticuleSeries = chart.series.push(new am4maps.GraticuleSeries());
+
+}); // end am4core.ready()
+</script>
+
+<!-- HTML -->
+<div id="chartdiv"></div>
 </body>
 </html>
