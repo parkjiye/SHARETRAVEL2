@@ -87,7 +87,6 @@
 var areas = [
     {
         name : '용산구',
-        image : '사랑해',
         path : [
             new kakao.maps.LatLng(37.5548768201904, 126.96966524449994),
             new kakao.maps.LatLng(37.55308718044556, 126.97642899633566),
@@ -122,7 +121,6 @@ var areas = [
         ]
     }, {
         name : '중구',
-        image : '사랑해',
         path : [
             new kakao.maps.LatLng(37.544062989758594, 127.00854659142894),
             new kakao.maps.LatLng(37.54385947805103, 127.00727818360471),
@@ -165,7 +163,6 @@ var areas = [
         ]
     }, {
         name : '종로구',
-        image : '사랑해',
         path : [
             new kakao.maps.LatLng(37.631840777111364, 126.9749313865046),
             new kakao.maps.LatLng(37.632194205253654, 126.97609588529602),
@@ -218,7 +215,6 @@ var areas = [
         ]
     }, {
         name : '서대문구',
-        image : '사랑해',
         path : [
             new kakao.maps.LatLng(37.59851932019209, 126.95347706883003),
             new kakao.maps.LatLng(37.5992407011344, 126.95499403097206),
@@ -256,7 +252,6 @@ var areas = [
         ]
     }, {
         name : '동대문구',
-        image : '사랑해',
         path : [
             new kakao.maps.LatLng(37.607062869017085, 127.07111288773496),
             new kakao.maps.LatLng(37.60107201319839, 127.07287376670605),
@@ -290,7 +285,6 @@ var areas = [
         ]
     }, {
         name : '성북구',
-        image : '사랑해',
         path : [
             new kakao.maps.LatLng(37.63654916557213, 126.98446028560235),
             new kakao.maps.LatLng(37.631446839436855, 126.99372381657889),
@@ -352,7 +346,6 @@ var areas = [
         ]
     }, {
         name : '성동구',
-        image : '사랑해',
         path : [
             new kakao.maps.LatLng(37.57275246810175, 127.04241813085706),
             new kakao.maps.LatLng(37.57038253579033, 127.04794980454399),
@@ -382,7 +375,6 @@ var areas = [
         ]
     }, {
         name : '마포구',
-        image : '사랑해',
         path : [
             new kakao.maps.LatLng(37.584651324803644, 126.88883849288884),
             new kakao.maps.LatLng(37.57082994377989, 126.9098094620638),
@@ -420,7 +412,6 @@ var areas = [
         ]
     }, {
         name : '광진구',
-        image : '사랑해',
         path : [
 			new daum.maps.LatLng(37.528573, 127.055656),
 			new daum.maps.LatLng(37.559256, 127.073493),
@@ -442,7 +433,6 @@ var areas = [
         ]
     }, {
         name : '광진구',
-        image : '/static/images/st_memory1.png',
         path : [
 			new daum.maps.LatLng(37.528573, 127.055656),
 			new daum.maps.LatLng(37.559256, 127.073493),
@@ -522,8 +512,7 @@ function displayArea(area) {
     kakao.maps.event.addListener(polygon, 'click', function(mouseEvent) {
         var content = '<div class="info">' +
                     '   <div class="title">' + area.name + '</div>' +
-                    '   <div class="title">' + area.image + '</div>' +
-                    '   <a class="btn btn-skin" href="single.html">여행기록 살펴보기</a>' +
+                    '   <a class="btn btn-skin" href="archive.html">여행기록 살펴보기</a>' +
                     '<div class="title">여행기록 살펴보기</div>'
 
 

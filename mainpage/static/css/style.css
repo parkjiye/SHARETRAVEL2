@@ -83,7 +83,7 @@ hr.line { margin: 15px auto; padding: 0; max-width: 70px;border: 0; border-top: 
 /* --Page-- */
 body.index-page {}
 body.sub-page{}
-body.sub-page header .main-header{height: 47vh;background: url("/static/images/st_airplane1.jpg") center center;}
+body.sub-page header .main-header{height: 47vh;background: url("/static/images/original.jpeg") center center;}
 
 body .wrap-body{position: relative;font-family: 'Nanum Myeongjo', serif;}
 body .wrap-body #page-top{position: fixed;right: font-family: 'Nanum Myeongjo', serif;40px;bottom: 40px;z-index: 999;}
@@ -91,14 +91,14 @@ body .wrap-body #page-top{position: fixed;right: font-family: 'Nanum Myeongjo', 
 /* -------------------------------Header-Styles-------------------------------- */
 /* ---------------------------------------------------------------------------- */
 
-header .main-header{position: relative;height: 100vh;width: 100%;background: url("/static/images/st_airplane1.jpg") center center;background-size: cover;z-index: 2;}
+header .main-header{position: relative;height: 100vh;width: 100%;background: url("/static/images/original.jpeg") center center;background-size: cover;z-index: 2;}
 body.index-page header{height:100vh;}
 header.sub-header{background:#1D2027;min-height: 120px;}
 
 /* Header Styles */
 .header-text {text-align:center; margin-top: 7vh;transition: opacity 1s ease 0s, transform 1s ease 0s;z-index: 1;opacity: 1;}
 body.index-page .header-text{text-align: center;margin: 35vh auto 0;}
-body.index-page .header-text .header-text-inner{text-align: center;border: 4px solid #fff;display: inline-block;padding: 20px 40px;font-family: 'Nanum Myeongjo', serif;}
+body.index-page .header-text .header-text-inner{text-align: center;display: inline-block;padding: 20px 40px;font-family: 'Nanum Myeongjo', serif;}
 body.sub-page .header-text{padding-left: 10%;margin-top: 12vh;}
 .header-text.remove {-moz-transform: translateY(3rem);-webkit-transform: translateY(3rem);-ms-transform: translateY(3rem);transform: translateY(3rem);-moz-transition: all 0.5s ease-in-out;-webkit-transition: all 0.5s ease-in-out;-ms-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;opacity: 0;visibility: hidden;}
 
