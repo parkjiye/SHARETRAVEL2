@@ -15,15 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from web.views import index, world, korea, account, single, archive, contact
+from web.views import index, world, korea, account, single, archive
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$',index),
     re_path(r'^archive', archive),
-    re_path(r'^contact', contact),
     re_path(r'^single',single),
     re_path(r'^korea',korea),
     re_path(r'^world',world),
     re_path(r'^account',account),
+    re_path(r'^index',index),
 ]

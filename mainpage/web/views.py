@@ -4,8 +4,6 @@ def index(request):
     return render(request, 'index.html', {})
 def archive(request):
     return render(request, 'archive.html', {})
-def contact(request):
-    return render(request, 'contact.html', {})
 def single(request):
     return render(request, 'single.html', {})
 def world(request):
